@@ -1,0 +1,29 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&family=Lato:wght@300;400;700&family=Martian+Mono:wght@100;200;300;400;500;600;700;800&family=Montserrat:wght@200;300;400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,500;1,800&family=Poppins:wght@100;200;300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap');
+
+
+  /* font-family: 'Kumbh Sans', sans-serif;
+font-family: 'Lato', sans-serif;
+font-family: 'Martian Mono', monospace;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Poppins', sans-serif;
+font-family: 'Roboto', sans-serif; */
+
+:root{
+
+
+    --poppins : 'Poppins', sans-serif;
+    --kumbs : 'Kumbh Sans', sans-serif;
+    --mono : 'Martian Mono', monospace;
+    --montserrat : 'Montserrat', sans-serif;
+    --opensans : 'Open Sans', sans-serif;
+    --roboto : 'Roboto', sans-serif;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}

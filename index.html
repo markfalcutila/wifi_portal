@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+  <link rel="stylesheet" href="sample-card.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <style>
+    /* @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&family=Lato:wght@300;400;700&family=Martian+Mono:wght@100;200;300;400;500;600;700;800&family=Montserrat:wght@200;300;400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,500;1,800&family=Poppins:wght@100;200;300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&family=Lato:wght@300;400;700&family=Martian+Mono:wght@100;200;300;400;500;600;700;800&family=Montserrat:wght@200;300;400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,500;1,800&family=Poppins:wght@100;200;300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap');
+:root{
+
+    --poppins : 'Poppins', sans-serif;
+    --kumbs : 'Kumbh Sans', sans-serif;
+    --mono : 'Martian Mono', monospace;
+    --montserrat : 'Montserrat', sans-serif;
+    --opensans : 'Open Sans', sans-serif;
+    --roboto : 'Roboto', sans-serif;
+    --inter : 'Inter', sans-serif;
+
+    --blue: "#007bff";
+    --text-gray: "#666666";
+
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--inter);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--blue);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #2773c5;
+}
+
+body {
+  margin: 0;
+  font-family: "Lucida Sans Unicode", sans-serif;
+  /* display: grid; */
+  text-align: left;
+  font-size: 0.8rem;
+  color: rgb(36, 35, 35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+  background-color: #F3F3F3;
+
+}
+
+.blog-card {
+  width: 80%;
+  max-width: 500px!important;
+  box-sizing: border-box;
+  /* margin: 2rem auto; */
+  height: auto;
+  /* box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.2); */
+  box-shadow: 0px 1px 4px 0 rgba(0, 0, 0, 0.1);
+
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* .blog-card:hover {
+  transform: scale(1.03);
+} */
+
+.blog-card .carousel-img {
+  height: 15rem;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 6px 6px 0 0;
+}
+
+.blog-content {
+  background-color: white;
+  padding: 0.3rem 2rem 1rem 2rem;
+}
+
+
+@media (min-width: 48rem) {
+  .blog-card {
+    max-width: 80%;
+  }
+}
+
+.carousel-item{
+    /* background: red; */
+}
+
+.carousel-inner{
+    /* background: red; */
+}
+
+.carousel-inner:before {
+    content: '';
+    display: block;
+    position: absolute;
+    background-image: 
+      linear-gradient(
+        rgba(0, 0, 0, .8),
+        rgba(0, 0, 0, .8)
+      );
+    width: 100vw;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    border: 1px solid green;
+}
+
+.inp-code{
+    /* border: 1px solid red; */
+    padding: 15px 30px;
+    width: 100%;
+    outline: none;
+    border: 1px solid var(--blue);
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: var(--inter);
+
+}
+
+.btn-login{
+    padding:15px;
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+
+}
+.btn-login:focus{
+    outline: none;
+}
+.btn-login:hover{
+    background-color: #2773c5;
+}
+
+
+/* --------------------------------------------- */
+
+
+.form-check{
+  display: flex;
+  align-items: center;
+}
+.form-inp{
+  /* border: 1px solid red!important; */
+  height: 35px;
+  width: 35px;
+  margin-right: 10px;
+  
+}
+.form-desc{
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* border: 1px solid red!important; */
+}
+
+label{
+  margin: 0;
+  padding: 0;
+}
+
+
+/* -------------------------------------------- */
+.payment-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.payment-title{
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600!important;
+}
+
+.payment-img-container{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+}
+.payment-img-gcash{
+  height: 56px;
+  width: auto;
+  padding: 10px 0;
+}
+.payment-img-paymaya{
+  height: 56px;
+  width: auto;
+}
+
+/* --------------------------------------------- */
+.row{
+  margin: 0;
+}
+.bundle-container{
+  display: flex;
+  flex-direction: column;
+  margin: 25px auto;
+  width: 175px;
+  padding: 30px 10px;
+  /* box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.2); */
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  box-shadow: 0px 1px 4px 0 rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--text-gray);
+  
+}
+.bundle-title{
+  display: flex;
+  align-items: end;
+  font-family: var(--inter);
+}
+.bundle-title .peso-sign{
+  font-size: 36px;
+  padding-bottom: 8px;
+}
+.bundle-title .price{
+  font-size: 48px;
+  font-weight: 600;
+  display: flex;
+  align-items: end;
+}
+.bundle-title .only{
+  font-size: 12px;
+  font-weight: 500;
+  padding-bottom: 15px;
+
+}
+
+.bundle-desc{
+  font-family: var(--inter);
+  font-size: 12px;
+  color: var(--text-gray);
+}
+.bundle-desc li{
+  list-style: none;
+  display: flex;
+  align-items: start;
+  margin: 10px 0;
+}
+
+.bundle-desc .arrow-icon{
+  color: var(--blue);
+  margin-right: 5px;
+  font-size: 14px;
+}
+
+.bundle-btn{
+  font-family: var(--inter);
+  padding: 10px;
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+}
+.bundle-btn:focus{
+  outline: none;
+}
+.bundle-btn:hover{
+  background-color: #2773c5;
+}
+
+.footer-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--text-gray);
+}
+
+.footer-desc{
+  font-family: #666666!important;
+  font-size: 10px;
+
+}
+.footer-logo{
+  height: 65px;
+  width: auto;
+  padding-left: 20px;
+}
+
+/* ---------------------------------------- */
+.modal-body{
+  scroll-behavior: auto;
+  
+  padding: 50px 20px 50px 50px!important;
+
+}
+.modal-content{
+  border-radius: 25px!important;
+}
+.modal-header{
+  border-bottom: none!important;
+  position: relative;
+
+  display: flex;
+  align-items: end!important;
+  justify-content: end!important;
+}
+.modal-header button{
+  padding: 10px 20px;
+  margin: 0!important;
+  font-size: 30px;
+}
+
+.modal-header .close:focus{
+  outline: none;
+  border: none;
+  color: var(--blue)!important;
+}
+
+.terms-container{
+
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.terms-container .terms-title{
+  font-family: 'Inter', sans-serif;
+  font-size: 30px;
+  font-weight: 600!important;
+  margin: 5px 0;
+  
+}
+.terms-container .semi-title{
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600!important;
+  margin: 15px 0;
+}
+.terms-container p{
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 300!important;
+  margin: 5px 0;
+}
+
+.terms-scrollable-container{
+  height: auto;
+  max-height: 500px;
+  overflow: auto;
+  margin: 20px 0;
+
+}
+
+.terms-left-container{
+  z-index: 99;
+}
+
+.illustrator-container{
+  position: relative!important;
+  z-index: 90;
+
+}
+.illustrator-img{
+  position: fixed;
+  top: 30%;
+  right: 15%;
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+
+}
+
+.btn-agree{
+  font-family: var(--inter);
+  padding: 10px;
+  width: 100%;
+  max-width: 120px;
+  background-color: #007bff;
+  color: white;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+}
+.btn-agree:focus{
+  outline: none;
+}
+.btn-agree:hover{
+  background-color: #2773c5;
+}
+
+
+@media (max-width:1000px){
+  .illustrator-container{
+    position: relative!important;
+    z-index: 90;
+    display: none;
+  
+  }
+  .illustrator-img{
+    position: fixed;
+    top: 30%;
+    right: 15%;
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+  
+  }
+}
+
+@media (min-width: 1200px){
+
+  .modal-lg {
+      max-width: 1100px!important;
+  }
+}
+
+@media (max-width:500px){
+
+  body {
+    padding: 0;
+  
+  }
+
+  .blog-card {
+    width: 100%;
+    max-width: 500px!important;
+    box-sizing: border-box;
+
+
+    /* margin: 2rem auto; */
+    height: auto;
+    /* box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.2); */
+    box-shadow: 0px 1px 4px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: none;
+  }
+  
+  .blog-content {
+    background-color: white;
+    padding: 0.3rem 2rem 1rem 2rem;
+  }
+  
+  
+  @media (min-width: 48rem) {
+    .blog-card {
+      max-width: 80%;
+    }
+  }
+  
+  .carousel-item{
+      /* background: red; */
+  }
+  
+  .carousel-inner{
+      /* background: red; */
+  }
+  
+  .inp-code{
+      /* border: 1px solid red; */
+      padding: 15px 30px;
+      width: 100%;
+      outline: none;
+      border: 1px solid var(--blue);
+      border-radius: 6px;
+      font-size: 14px;
+      font-family: var(--inter);
+  }
+  
+  .btn-login{
+      padding:15px;
+      width: 100%;
+      background-color: #007bff;
+      color: white;
+      outline: none;
+      cursor: pointer;
+      border: none;
+      border-radius: 6px;
+  
+  }
+  
+  /* --------------------------------------------- */
+  
+  
+  .form-check{
+    display: flex;
+  }
+  .form-inp{
+    /* border: 1px solid red!important; */
+    height: 35px;
+    width: 35px;
+    margin-right: 10px;
+    
+  }
+  .form-desc{
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid red!important; */
+  }
+  
+  
+  /* -------------------------------------------- */
+  .payment-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .payment-title{
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600!important;
+  }
+  
+  .payment-img-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  
+  }
+  .payment-img-gcash{
+    height: 56px;
+    width: auto;
+    padding: 10px 0;
+  }
+  .payment-img-paymaya{
+    height: 56px;
+    width: auto;
+  }
+  
+  /* --------------------------------------------- */
+  .row{
+    margin: 0;
+  }
+  .bundle-container{
+    display: flex;
+    flex-direction: column;
+    margin: 15px auto;
+    width: 175px;
+    padding: 25px 10px;
+    
+  }
+  .bundle-title{
+    display: flex;
+    align-items: end;
+    font-family: var(--inter);
+  }
+  .bundle-title .peso-sign{
+    font-size: 20px;
+    padding-bottom: 8px;
+  }
+  .bundle-title .price{
+    font-size: 38px;
+    font-weight: 600;
+   
+  }
+  .bundle-title .only{
+    font-size: 12px;
+    font-weight: 500;
+    padding-bottom: 15px;
+  
+  }
+  
+  .bundle-desc{
+    font-family: var(--inter);
+    font-size: 12px;
+    color: var(--text-gray);
+  }
+  .bundle-desc li{
+    list-style: none;
+    display: flex;
+    align-items: start;
+    margin: 10px 0;
+  }
+  
+  .bundle-desc .arrow-icon{
+    color: var(--blue);
+    margin-right: 5px;
+    font-size: 12px;
+  }
+  
+  .bundle-btn{
+    font-size: 12px;
+  }
+  .bundle-btn:focus{
+    outline: none;
+  }
+  .bundle-btn:hover{
+    background-color: #2773c5;
+  }
+  
+  .footer-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--text-gray);
+  }
+  
+  .footer-desc{
+    font-family: #666666!important;
+    font-size: 10px;
+  }
+  
+  /* ---------------------------------------- */
+  .modal-body{
+    scroll-behavior: auto;
+    padding: 20px 30px 30px 30px!important;
+  
+  }
+  .modal-content{
+    border-radius: 25px!important;
+  }
+
+  .modal-header button{
+    padding: 10px 20px;
+    margin: 0!important;
+    font-size: 30px;
+  }
+  
+  .modal-header .close:focus{
+    outline: none;
+    border: none;
+    color: var(--blue)!important;
+  }
+  
+ 
+  .terms-container .terms-title{
+    font-size: 20px;
+    font-weight: 600!important;
+  
+  }
+  .terms-container .semi-title{
+    font-size: 13px;
+  }
+
+  .terms-container p{
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 300!important;
+    margin: 5px 0;
+  }
+  
+  .terms-scrollable-container{
+    height: auto;
+    max-height: 300px;
+    overflow: auto;
+    margin: 20px 0;
+  }
+  
+  .terms-left-container{
+    z-index: 99;
+  }
+  
+  .illustrator-container{
+    position: relative!important;
+    z-index: 90;
+    display: none;
+  }
+  
+  
+}
+  </style>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+</head>
+<body>
+
+  <section class="blog-card">
+    <!-- <img
+      src="https://fastly.picsum.photos/id/949/1200/800.jpg?hmac=mW-_YmIqUMbyF5ydxz0QPn1GHneBWJEVlNCValTT5xw"
+      alt="white palace ceiling view"
+    /> -->
+
+    <div id="magicCarousel" class="carousel slide" data-ride="carousel">
+      
+        <!--    Carousel Indicators    -->
+              <ol class="carousel-indicators">
+                <li data-target="#magicCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#magicCarousel" data-slide-to="1"></li>
+                <li data-target="#magicCarousel" data-slide-to="2"></li>
+                <li data-target="#magicCarousel" data-slide-to="3"></li>
+              </ol>
+              
+        <!--    Carousel Slider    -->
+              <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active">
+                  <img src="https://miro.medium.com/v2/resize:fit:1200/0*C4NoxFxUXN1hpX03.jpg" class="d-block w-100 carousel-img">
+
+                  <div class="carousel-caption">
+                  </div> 
+                </div>
+                
+                <div class="carousel-item">
+                  <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRWtzh6pRERGUkcM38HohKMkbDB53E4AIwMw&usqp=CAU" class="d-block w-100 carousel-img"> -->
+                  <img src="https://wallpapercave.com/wp/wp8109687.jpg" class="d-block w-100 carousel-img">
+
+                  <div class="carousel-caption">
+                  </div> 
+                </div>
+                
+                <div class="carousel-item">
+                  <img src="https://4kwallpapers.com/images/wallpapers/call-of-duty-mobile-android-games-ios-games-2560x1440-778.jpg" class="d-block w-100 carousel-img">
+                  <div class="carousel-caption">
+                  </div> 
+                </div>
+                
+                <div class="carousel-item">
+                  <img src="https://images.alphacoders.com/956/956577.jpg" class="d-block w-100 carousel-img">
+                  <div class="carousel-caption">
+                  </div> 
+                </div>
+                
+        <!--     Carousel Controls     -->
+                <a href="#magicCarousel" class="carousel-control-prev" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a href="#magicCarousel" class="carousel-control-next" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+                
+              </div>
+    </div>
+
+
+    <div class="blog-content">
+
+      <div class="form-check my-3 mt-5">
+        <input class="form-check-input form-inp" type="checkbox" id="gridCheck1">
+        <div class="form-desc ">
+          <label class="form-check-label" for="gridCheck1">
+            I agree and have read the
+          <a class="form-check-label" href="#" data-toggle="modal" data-target="#exampleModalCenter">
+            Terms and the Data Privacy Policy
+          </a>
+          </label>
+
+        </div>
+       
+      </div>
+
+      <input type="text" class="inp-code my-3" placeholder="ENTER CODE ..."> 
+
+      <button class="btn-login my-3">LOGIN</button>
+
+      <div class="payment-container my-3">
+        <h3 class="payment-title">PAYMENT METHOD</h3>
+
+        <div class="payment-img-container">
+          <img src="GCASH.png" class="payment-img-gcash" alt="">
+          <img src="PAYMAYA.png" class="payment-img-paymaya" alt="">
+
+        </div>
+      </div>
+
+     
+
+      <div class="row">
+
+        <div class="bundle-container col-5">
+          <div class="bundle-title">
+              <span class="peso-sign">₱</span>
+              <span class="price">5</span>
+              <span class="only">only</span>
+            </span>
+          </div>
+
+          <ul class="bundle-desc">
+              <li>
+                <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                <span>High Speed. Unlimited </span>
+              </li>
+              <li>
+                <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                <span>1 hour with pause time </span>
+                </li>
+              <li>
+                <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                <span>Best for online games,
+                youtube and facebook. </span>
+              </li>
+              <li>
+                <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                <span>No expiration </span>
+              </li>
+          </ul>
+          <button class="bundle-btn">BUY NOW</button>
+        </div>
+
+        <div class="bundle-container col-5">
+          <div class="bundle-title">
+              <span class="peso-sign">₱</span>
+              <span class="price">10</span>
+              <span class="only">only</span>
+            </span>
+          </div>
+
+          <ul class="bundle-desc">
+              <li>
+                <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                <span>High Speed. Unlimited </span>
+              </li>
+              <li>
+                <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                <span>1 hour with pause time </span>
+                </li>
+              <li>
+                <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                <span>Best for online games,
+                youtube and facebook. </span>
+              </li>
+              <li>
+                <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                <span>No expiration </span>
+              </li>
+          </ul>
+          <button class="bundle-btn">BUY NOW</button>
+        </div>
+
+        <div class="bundle-container col-5">
+          <div class="bundle-title">
+              <span class="peso-sign">₱</span>
+              <span class="price">20</span>
+              <span class="only">only</span>
+            </span>
+          </div>
+
+          <ul class="bundle-desc">
+              <li>
+                <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                <span>High Speed. Unlimited </span>
+              </li>
+              <li>
+                <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                <span>1 hour with pause time </span>
+                </li>
+              <li>
+                <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                <span>Best for online games,
+                youtube and facebook. </span>
+              </li>
+              <li>
+                <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                <span>No expiration </span>
+              </li>
+          </ul>
+          <button class="bundle-btn">BUY NOW</button>
+        </div>
+
+        <div class="bundle-container col-5">
+          <div class="bundle-title">
+              <span class="peso-sign">₱</span>
+              <span class="price">50</span>
+              <span class="only">only</span>
+            </span>
+          </div>
+
+          <ul class="bundle-desc">
+              <li>
+                <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                <span>High Speed. Unlimited </span>
+              </li>
+              <li>
+                <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                <span>1 hour with pause time </span>
+                </li>
+              <li>
+                <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                <span>Best for online games,
+                youtube and facebook. </span>
+              </li>
+              <li>
+                <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                <span>No expiration </span>
+              </li>
+          </ul>
+          <button class="bundle-btn">BUY NOW</button>
+        </div>
+
+        <div class="bundle-container col-5">
+          <div class="bundle-title">
+              <span class="peso-sign">₱</span>
+              <span class="price">100</span>
+              <span class="only">only</span>
+            </span>
+          </div>
+
+          <ul class="bundle-desc">
+              <li>
+                <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                <span>High Speed. Unlimited </span>
+              </li>
+              <li>
+                <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                <span>1 hour with pause time </span>
+                </li>
+              <li>
+                <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                <span>Best for online games,
+                youtube and facebook. </span>
+              </li>
+              <li>
+                <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                <span>No expiration </span>
+              </li>
+          </ul>
+          <button class="bundle-btn">BUY NOW</button>
+        </div>
+
+        <div class="bundle-container col-5">
+          <div class="bundle-title">
+              <span class="peso-sign">₱</span>
+              <span class="price">200</span>
+              <span class="only">only</span>
+            </span>
+          </div>
+
+          <ul class="bundle-desc">
+              <li>
+                <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                <span>High Speed. Unlimited </span>
+              </li>
+              <li>
+                <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                <span>1 hour with pause time </span>
+                </li>
+              <li>
+                <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                <span>Best for online games,
+                youtube and facebook. </span>
+              </li>
+              <li>
+                <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                <span>No expiration </span>
+              </li>
+          </ul>
+          <button class="bundle-btn">BUY NOW</button>
+        </div>
+        
+
+      </div>
+
+
+      <div class="footer-container my-5">
+        <span class="footer-desc">
+          This wireless network is powered by
+        </span>
+        <img src="fastnet-logo.svg" alt="" class="footer-logo">
+      </div>
+      
+  </div>
+
+
+  </section>
+
+
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+              <div class="row">
+
+                <div class="col-12 terms-container">
+                  <span class="terms-title">Terms and Condition</span>
+
+                  <div class="terms-scrollable-container row">
+
+
+                    <div class="col-lg-7 col-sm-12 terms-left-container">
+                      <span class="semi-title">Privacy</span>
+                      <p>
+                        FASTNET collects, process and store personal data about you when you avail of our products and services, including our web portal and mobile application, participate in their events and enter into any contract with them (Services), provided that you have given your express consent if and when necessary.
+                      </p>
+                      <p>
+                        This privacy policy has been prepared to better serve any person who avails of the Services to inform them on how their personal data are being collected, used and secured FASTNET.
+                      </p>
+                      <p>
+                        Please read our terms and conditions carefully to get a clear understanding of how FASTNET collects, uses, protects or otherwise handles your personal data in accordance with Republic Act No. 10173, or the Data Privacy Act of 2012, and its Implementing Rules and Regulations (collectively, the “Data Privacy Act”).
+                      </p>
+
+                      <!--  -->
+                      <span class="semi-title">Information Collection & Usage</span>
+                      <p>
+                        Your privacy is important to us. With our privacy policy we have attempted to strike a balance: on one side we are trying to keep the user experience at an enjoyable level and on the other hand we are trying to maintain as much privacy as possible. As a matter of principle we do not collect and store sensitive personal data and we make it as easy as possible for our users to remain anonymous if they wish to be so.
+                      </p>
+
+                      <span class="semi-title">Privacy Guarantee</span>
+                      <p>
+                        When you use our Service, your full name, email address, phone number, and other information might be required. The information is used to complete transactions and help us provide better support and services to you.
+                      </p>
+
+                      <span class="semi-title">Data Security</span>
+                      <p>
+                        To prevent unauthorized access, maintain data accuracy, and ensure the correct use of information, we have put in place appropriate physical, electronic, and managerial procedures to safeguard and secure the information we collect online.
+                      </p>
+                      <!--  -->
+                      <span class="semi-title">Terms and Conditions</span>
+                      <p>
+                        By using our internet service, you hereby expressly ACKNOWLEDGE and AGREE that there is significant security, privacy and confidentiality risks inherent in accessing or transmitting information through the internet, whether the connection is facilitated through wired or wireless technology. Security issues include, without limitation, interception of transmissions, loss of data, and the introduction or viruses and other programs that can corrupt or damage your computer.
+                      </p>
+                      <p>
+                        Accordingly, you agree that the Administrator of this Service is NOT liable for any interception or transmissions, computer worms or viruses, loss of data, file corruption, hacking or damage to your computer or other devices that result from the transmission or download of information or materials through the internet service provided.
+                      </p>
+                      <p>
+                        Use of the wireless network is subject to the general restrictions outlined below. If abnormal, illegal, or unauthorized behavior is detected, including heavy consumption of bandwidth, the network provider reserves the right to permanently disconnect the offending device from the wireless network.
+                      </p>
+
+                      <!--  -->
+                      <span class="semi-title">Examples of Illegal Uses</span>
+                      <p>
+                        The following are representative examples only and do not comprise a comprehensive list of illegal uses:
+                      </p>
+                      <p>
+                        Spamming and invasion of privacy - Sending of unsolicited bulk and/or commercial messages over the Internet using the Service or using the Service for activities that invade another's privacy.
+                      </p>
+                      <p>
+                        Intellectual property right violations - Engaging in any activity that infringes or misappropriates the intellectual property rights of others, including patents, copyrights, trademarks, service marks, trade secrets, or any other proprietary right of any third party.
+                      </p>
+                      <p>
+                        Accessing illegally or without authorization computers, accounts, equipment or networks belonging to another party, or attempting to penetrate/circumvent security measures of another system. This includes any activity that may be used as a precursor to an attempted system penetration, including, but not limited to, port scans, stealth scans, or other information gathering activity.
+                      </p>
+                      <p>
+                        The transfer of technology, software, or other materials in violation of applicable export laws and regulations.
+                      </p>
+                  
+                    
+                      <!--  -->
+                      <span class="semi-title">Export Control Violations</span>
+                      <p>
+                        Using the Service in violation of applicable law and regulation, including, but not limited to, advertising, transmitting, or otherwise making available ponzi schemes, pyramid schemes, fraudulently charging credit cards, pirating software, or making fraudulent offers to sell or buy products, items, or services.
+                      </p>
+
+                      <!--  -->
+                      <span class="semi-title">Uttering threats;</span>
+                      <p>
+                        Distribution of pornographic materials to minors and Child pornography.
+                      </p>
+
+                      <!--  -->
+                      <span class="semi-title">Examples of Unacceptable Uses</span>
+                      <p>
+                        The following are representative examples only and do not comprise a comprehensive list of unacceptable uses:
+                      </p>
+                      <p>
+                        High bandwidth operations, such as large file transfers and media sharing with peer-to-peer programs (i.e.torrents)
+                      </p>
+                      <p>
+                        Obscene or indecent speech or materials
+                      </p>
+                      <p>
+                        Defamatory or abusive language
+                      </p>
+                      <p>
+                        Using the Service to transmit, post, upload, or otherwise making available defamatory, harassing, abusive, or threatening material or language that encourages bodily harm, destruction of property or harasses another.
+                      </p>
+                      <p>
+                        Forging or misrepresenting message headers, whether in whole or in part, to mask the originator of the message.
+                      </p>
+
+                      <!--  -->
+                      <span class="semi-title">
+                        Facilitating a Violation of these Terms of Use
+                      </span>
+                      <p>
+                        Hacking
+                      </p>
+                      <p>
+                        Distribution of Internet viruses, Trojan horses, or other destructive activities
+                      </p>
+                      <p>
+                        Distributing information regarding the creation of and sending Internet viruses, worms, Trojan horses, pinging, flooding, mail-bombing, or denial of service attacks. Also, activities that disrupt the use of or interfere with the ability of others to effectively use the node or any connected network, system, service, or equipment.
+                      </p>
+
+                      <p>
+                        Advertising, transmitting, or otherwise making available any software product, product, or service that is designed to violate these Terms of Use, which includes the facilitation of the means to spam, initiation of pinging, flooding, mail-bombing, denial of service attacks, and piracy of software.
+                      </p>
+
+                      <p>The sale, transfer, or rental of the Service to customers, clients or other third parties, either directly or as part of a service or product created for resale.</p>
+
+                      <p>
+                        Seeking information on passwords or data belonging to another user.
+                      </p>
+
+                      <p>
+                        Making unauthorized copies of proprietary software, or offering unauthorized copies of proprietary software to others.
+                      </p>
+
+                      <p>Intercepting or examining the content of messages, files or communications in transit on a data network.</p>
+                      <!--  -->
+
+                      <span class="semi-title">
+                        Conditions of Access
+                      </span>
+
+                      <p>
+                        You hereby acknowledge that FASTNET gives you access to its Services and as receipt of such, you agree that you will not attempt to circumvent its User Authentication Process or engage in any attempts to access its network where not expressly authorized to do so.
+                      </p>
+
+                      <p>Should you fail to comply with this condition, you agree to pay FASTNET immediately, on demand, all costs, loss and/or damages incurred or suffered by FASTNET as a result of your breach.</p>
+
+                      <!--  -->
+
+                      <span class="semi-title">
+                        Service Availability
+                      </span>
+
+                      <p>
+                        FASTNET will use reasonable endeavors to keep the service available at all times. However, you agree that FASTNET shall not be liable to you or any other person whatsoever in respect of any loss or damages caused by or arising from the unavailability of, or any interruption in the service for any reason whatsoever.
+                      </p>
+
+                      <p>Neither you nor any other person shall have any claim against FASTNET for any direct, consequential, incidental, indirect or special loss or damages (without being limited to) business interruption, loss of business information, loss of data or other pecuniary loss, arising from the unavailability of, or interruption in the service, regardless of whether such claim is based on breach of contract, delict, breach of implied warranties or otherwise and even if the possibility of such loss or damages could have been foreseen or if FASTNET or its Administrator was negligent, and you indemnify FASTNET accordingly.</p>
+
+                      <p>
+                        Fair Usage Policy
+                      </p>
+                    </div>
+
+                    <div class="col-lg-4 illustrator-container">
+                      <img src="terms-svg.svg" alt="" class=" illustrator-img">
+                    </div>
+                    
+                  </div>
+
+                  <button class="btn-agree">I AGREE</button>
+
+
+                  
+                </div>
+              </div>
+
+            
+          </div>
+          <!-- <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div> -->
+        </div>
+      </div>
+    </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js">    </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  
+</body>
+</html>
